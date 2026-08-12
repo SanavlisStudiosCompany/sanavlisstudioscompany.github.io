@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -7,14 +8,21 @@
 
     <title>SANAVLIS Creative Studio</title>
 
-    <meta name="description" content="Sanavlis Creative Studio — Vintage Motorsport, Music, Geek & Nerd Art, Parodies, Japanese Retro and Creative Design.">
+    <meta name="description"
+        content="Sanavlis Creative Studio — Vintage Motorsport, Music, Geek & Nerd Art, Parodies, Japanese Retro and Creative Design.">
 
-    <meta name="keywords" content="vintage motorsport art, geek art, nerd art, parody art, progressive rock art, Japanese retro art, cat art, Sanavlis">
+    <meta name="keywords"
+        content="vintage motorsport art, geek art, nerd art, parody art, progressive rock art, Japanese retro art, cat art, Sanavlis">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <style>
 
@@ -29,21 +37,178 @@
         }
 
         body {
-
             background: #111111;
             color: #F5F5F5;
             font-family: 'Inter', sans-serif;
             overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =================================
+           PREMIUM HEADER
+        ================================= */
+
+        .topbar {
+
+            width: 100%;
+            min-height: 74px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 42px;
+
+            border-bottom: 1px solid #202020;
+
+            position: relative;
+            z-index: 10;
 
         }
 
-        /* =========================
+        .nav-left,
+        .nav-right {
+
+            display: flex;
+            align-items: center;
+            gap: 34px;
+
+        }
+
+        .nav-link {
+
+            position: relative;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            color: #D6D6D6;
+
+            transition: 0.3s ease;
+
+        }
+
+        .nav-link:hover {
+
+            color: #C8A24A;
+
+        }
+
+        .nav-link.active {
+
+            color: #C8A24A;
+
+        }
+
+        .nav-link.active::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 0;
+            bottom: -14px;
+
+            width: 46px;
+            height: 2px;
+
+            background: #C8A24A;
+
+        }
+
+
+        /* SOCIAL ICONS */
+
+        .social-links {
+
+            display: flex;
+            align-items: center;
+            gap: 24px;
+
+        }
+
+        .social-links a {
+
+            font-size: 20px;
+
+            text-decoration: none;
+
+            color: #F5F5F5;
+
+            transition: 0.3s ease;
+
+        }
+
+        .social-links a:hover {
+
+            color: #C8A24A;
+            transform: translateY(-2px);
+
+        }
+
+
+        /* EXPLORE ART BUTTON */
+
+        .explore-top {
+
+            padding: 15px 23px;
+
+            border: 1px solid #C8A24A;
+
+            text-decoration: none;
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+
+            letter-spacing: 2.5px;
+
+            color: #F5F5F5;
+
+            transition: 0.35s ease;
+
+        }
+
+        .explore-top span {
+
+            color: #C8A24A;
+
+            margin-left: 12px;
+
+            font-size: 17px;
+
+        }
+
+        .explore-top:hover {
+
+            background: #C8A24A;
+            color: #111111;
+
+        }
+
+        .explore-top:hover span {
+
+            color: #111111;
+
+        }
+
+
+        /* =================================
            HERO
-        ========================= */
+        ================================= */
 
         .hero {
 
-            min-height: 100vh;
+            min-height: calc(100vh - 74px);
 
             display: flex;
             flex-direction: column;
@@ -53,25 +218,35 @@
 
             text-align: center;
 
-            padding: 40px 25px;
+            padding: 45px 25px 80px;
 
         }
 
         .logo {
 
-            width: 170px;
+            width: 210px;
 
-            margin-bottom: 35px;
+            max-width: 42vw;
 
-            transition: 0.6s ease;
+            margin-bottom: 18px;
+
+            filter: drop-shadow(0 8px 20px rgba(200, 162, 74, 0.12));
+
+            transition: transform 0.6s ease,
+                        filter 0.6s ease;
 
         }
 
-        /* Sanavlis Easter Egg */
+        /*
+           SANAVLIS EASTER EGG
+           8 graus de irresponsabilidade corporativa.
+        */
 
         .logo:hover {
 
-            transform: rotate(8deg);
+            transform: rotate(8deg) scale(1.025);
+
+            filter: drop-shadow(0 10px 25px rgba(200, 162, 74, 0.28));
 
         }
 
@@ -79,49 +254,116 @@
 
             font-family: 'Cormorant Garamond', serif;
 
-            font-size: 72px;
+            font-size: clamp(56px, 7vw, 92px);
 
-            letter-spacing: 12px;
+            letter-spacing: 15px;
 
             font-weight: 600;
+
+            line-height: 0.95;
+
+        }
+
+
+        /* CREATIVE STUDIO + GOLD LINES */
+
+        .studio-line {
+
+            width: min(620px, 85vw);
+
+            display: flex;
+            align-items: center;
+
+            gap: 22px;
+
+            margin-top: 24px;
+
+        }
+
+        .studio-line::before,
+        .studio-line::after {
+
+            content: "";
+
+            height: 1px;
+
+            flex: 1;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #C8A24A
+                );
+
+        }
+
+        .studio-line::after {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #C8A24A,
+                    transparent
+                );
 
         }
 
         .subtitle {
 
-            margin-top: 12px;
-
             color: #C8A24A;
 
-            font-size: 20px;
+            white-space: nowrap;
 
-            letter-spacing: 4px;
+            font-size: 17px;
+
+            letter-spacing: 7px;
 
             text-transform: uppercase;
 
         }
 
+
+        /* TAGLINE */
+
         .description {
 
-            max-width: 700px;
+            max-width: 850px;
 
-            margin-top: 30px;
+            margin-top: 24px;
 
-            font-size: 20px;
+            font-family: 'Cormorant Garamond', serif;
 
-            line-height: 1.7;
+            font-size: clamp(22px, 2.2vw, 31px);
 
-            color: #D8D8D8;
+            line-height: 1.35;
+
+            color: #EEEEEE;
 
         }
 
+        .description .art {
+
+            color: #C8A24A;
+
+            font-style: italic;
+
+            font-weight: 600;
+
+            font-size: 1.15em;
+
+        }
+
+
+        /* MAIN HERO BUTTON */
+
         .button {
 
-            margin-top: 50px;
+            margin-top: 38px;
 
             display: inline-block;
 
-            padding: 18px 40px;
+            padding: 17px 37px;
 
             border: 1px solid #C8A24A;
 
@@ -133,7 +375,17 @@
 
             text-transform: uppercase;
 
+            font-size: 11px;
+
             transition: 0.35s;
+
+        }
+
+        .button span {
+
+            color: #C8A24A;
+
+            margin-left: 13px;
 
         }
 
@@ -145,9 +397,16 @@
 
         }
 
-        /* =========================
+        .button:hover span {
+
+            color: #111111;
+
+        }
+
+
+        /* =================================
            COLLECTIONS
-        ========================= */
+        ================================= */
 
         .section {
 
@@ -185,7 +444,8 @@
 
             display: grid;
 
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
 
             gap: 30px;
 
@@ -197,13 +457,49 @@
 
         .card {
 
+            position: relative;
+
+            overflow: hidden;
+
             border: 1px solid #2A2A2A;
 
             padding: 35px 30px;
 
             min-height: 220px;
 
-            transition: 0.3s;
+            background: #111111;
+
+            transition:
+                transform 0.4s ease,
+                border-color 0.4s ease,
+                box-shadow 0.4s ease;
+
+        }
+
+        .card::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            opacity: 0;
+
+            transform: scale(1.06);
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(200,162,74,0.10),
+                    transparent 70%
+                );
+
+            transition:
+                opacity 0.45s ease,
+                transform 0.45s ease;
+
+            pointer-events: none;
 
         }
 
@@ -211,7 +507,25 @@
 
             border-color: #C8A24A;
 
-            transform: translateY(-6px);
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 16px 40px rgba(0,0,0,0.35);
+
+        }
+
+        .card:hover::before {
+
+            opacity: 1;
+
+            transform: scale(1);
+
+        }
+
+        .card > * {
+
+            position: relative;
+            z-index: 2;
 
         }
 
@@ -243,9 +557,10 @@
 
         }
 
-        /* =========================
+
+        /* =================================
            ABOUT
-        ========================= */
+        ================================= */
 
         .about {
 
@@ -279,9 +594,10 @@
 
         }
 
-        /* =========================
+
+        /* =================================
            FOOTER
-        ========================= */
+        ================================= */
 
         footer {
 
@@ -303,6 +619,8 @@
 
             font-size: 24px;
 
+            letter-spacing: 4px;
+
         }
 
         footer p {
@@ -311,29 +629,110 @@
 
         }
 
-        /* =========================
-           MOBILE
-        ========================= */
 
-        @media (max-width: 700px) {
+        /* =================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 900px) {
+
+            .topbar {
+
+                padding: 18px 22px;
+
+                flex-direction: column;
+
+                gap: 20px;
+
+            }
+
+            .nav-left {
+
+                gap: 22px;
+
+            }
+
+            .nav-right {
+
+                gap: 20px;
+
+            }
+
+            .hero {
+
+                min-height: auto;
+
+                padding-top: 75px;
+
+            }
+
+        }
+
+        @media (max-width: 600px) {
+
+            .topbar {
+
+                align-items: center;
+
+            }
+
+            .nav-left {
+
+                gap: 16px;
+
+            }
+
+            .nav-link {
+
+                font-size: 9px;
+
+                letter-spacing: 1.5px;
+
+            }
+
+            .social-links {
+
+                gap: 16px;
+
+            }
+
+            .explore-top {
+
+                padding: 12px 15px;
+
+                font-size: 9px;
+
+            }
 
             h1 {
 
-                font-size: 48px;
-
-                letter-spacing: 7px;
+                letter-spacing: 8px;
 
             }
 
             .logo {
 
-                width: 135px;
+                width: 150px;
+
+            }
+
+            .subtitle {
+
+                font-size: 11px;
+
+                letter-spacing: 4px;
+
+            }
+
+            .studio-line {
+
+                gap: 12px;
 
             }
 
             .description {
 
-                font-size: 18px;
+                font-size: 23px;
 
             }
 
@@ -354,55 +753,154 @@
 <body>
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- =================================
+     PREMIUM HEADER
+================================= -->
 
-<section class="hero">
+<header class="topbar">
+
+    <nav class="nav-left">
+
+        <a href="#home"
+           class="nav-link active">
+            Home
+        </a>
+
+        <a href="#collections"
+           class="nav-link">
+            Collections
+        </a>
+
+        <a href="#about"
+           class="nav-link">
+            About
+        </a>
+
+    </nav>
+
+
+    <div class="nav-right">
+
+        <div class="social-links">
+
+            <a href="#"
+               aria-label="Instagram"
+               title="Instagram">
+
+                <i class="bi bi-instagram"></i>
+
+            </a>
+
+            <a href="#"
+               aria-label="Pinterest"
+               title="Pinterest">
+
+                <i class="bi bi-pinterest"></i>
+
+            </a>
+
+            <a href="#"
+               aria-label="YouTube"
+               title="YouTube">
+
+                <i class="bi bi-youtube"></i>
+
+            </a>
+
+        </div>
+
+
+        <a href="#collections"
+           class="explore-top">
+
+            Explore Art
+
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =================================
+     HERO
+================================= -->
+
+<section class="hero"
+         id="home">
+
 
     <img
-        src="https://raw.githubusercontent.com/SanavlisStudiosCompany/sanavlisstudioscompany.github.io/main/assets/logo-sanavlis.png"
-        alt="Sanavlis Creative Studio Logo"
+        src="assets/logo-sanavlis.png"
+        alt="Sanavlis Creative Studio SSC Logo"
         class="logo"
-        onerror="this.style.display='none'"
     >
 
-    <h1>SANAVLIS</h1>
 
-    <div class="subtitle">
-        Creative Studio
+    <h1>
+        SANAVLIS
+    </h1>
+
+
+    <div class="studio-line">
+
+        <div class="subtitle">
+
+            Creative Studio
+
+        </div>
+
     </div>
+
 
     <p class="description">
 
         Where Motorsport, Music, Geek Culture,
-        Retro Design and Imagination become Art.
+        Retro Design and Imagination
+
+        <br>
+
+        become <span class="art">Art.</span>
 
     </p>
 
-    <a href="#collections" class="button">
+
+    <a href="#collections"
+       class="button">
 
         Explore Collection
 
+        <span>→</span>
+
     </a>
+
 
 </section>
 
 
-<!-- =========================
-     COLLECTIONS
-========================= -->
 
-<section class="section" id="collections">
+<!-- =================================
+     COLLECTIONS
+================================= -->
+
+<section class="section"
+         id="collections">
 
     <h2 class="section-title">
+
         Featured Collections
+
     </h2>
+
 
     <p class="section-intro">
 
-        A creative universe inspired by speed, music,
-        pop culture, nostalgia, humor and imagination.
+        A creative universe inspired by speed,
+        music, pop culture, nostalgia,
+        humor and imagination.
 
     </p>
 
@@ -414,11 +912,17 @@
 
             <div class="card-icon">🏁</div>
 
-            <h3>Vintage Motorsport</h3>
+            <h3>
+                Vintage Motorsport
+            </h3>
 
             <p>
-                Classic racing cars, legendary drivers,
-                iconic liveries and the golden age of motorsport.
+
+                Classic racing cars,
+                legendary drivers,
+                iconic liveries and the
+                golden age of motorsport.
+
             </p>
 
         </div>
@@ -428,11 +932,16 @@
 
             <div class="card-icon">🎸</div>
 
-            <h3>Music & Progressive Rock</h3>
+            <h3>
+                Music & Progressive Rock
+            </h3>
 
             <p>
-                Creative artwork inspired by timeless albums,
-                progressive rock and the visual culture of music.
+
+                Creative artwork inspired by
+                timeless albums, progressive rock
+                and the visual culture of music.
+
             </p>
 
         </div>
@@ -442,11 +951,16 @@
 
             <div class="card-icon">🤓</div>
 
-            <h3>Geek & Nerd Art</h3>
+            <h3>
+                Geek & Nerd Art
+            </h3>
 
             <p>
-                Designs inspired by games, movies, comics,
-                technology, science fiction and geek culture.
+
+                Designs inspired by games,
+                movies, comics, technology,
+                science fiction and geek culture.
+
             </p>
 
         </div>
@@ -456,11 +970,16 @@
 
             <div class="card-icon">🎭</div>
 
-            <h3>Parody Art</h3>
+            <h3>
+                Parody Art
+            </h3>
 
             <p>
-                Clever reinterpretations, visual wordplay
-                and humorous takes on iconic cultural references.
+
+                Clever reinterpretations,
+                visual wordplay and humorous
+                takes on iconic cultural references.
+
             </p>
 
         </div>
@@ -470,11 +989,16 @@
 
             <div class="card-icon">😸</div>
 
-            <h3>Cat Art & Purrodies</h3>
+            <h3>
+                Cat Art & Purrodies
+            </h3>
 
             <p>
-                Where cats, music, pop culture and
-                completely unnecessary puns come together.
+
+                Where cats, music,
+                pop culture and completely
+                unnecessary puns come together.
+
             </p>
 
         </div>
@@ -484,11 +1008,16 @@
 
             <div class="card-icon">🇯🇵</div>
 
-            <h3>Japanese Retro</h3>
+            <h3>
+                Japanese Retro
+            </h3>
 
             <p>
-                Japanese signs, typography, visual culture,
-                nostalgia and minimalist retro design.
+
+                Japanese signs, typography,
+                visual culture, nostalgia
+                and minimalist retro design.
+
             </p>
 
         </div>
@@ -499,13 +1028,18 @@
 </section>
 
 
-<!-- =========================
+
+<!-- =================================
      ABOUT
-========================= -->
+================================= -->
 
-<section class="about">
+<section class="about"
+         id="about">
 
-    <h2>About Sanavlis</h2>
+    <h2>
+        About Sanavlis
+    </h2>
+
 
     <p>
 
@@ -523,16 +1057,17 @@
 </section>
 
 
-<!-- =========================
+
+<!-- =================================
      FOOTER
-========================= -->
+================================= -->
 
 <footer>
 
     <p>
-
-        <strong>SANAVLIS</strong>
-
+        <strong>
+            SANAVLIS
+        </strong>
     </p>
 
     <p>
@@ -550,12 +1085,13 @@
     </p>
 
 
-    <!-- Easter Egg -->
-
     <!--
+        SANAVLIS Creative Studio
         Designed with passion.
-        Sanavlis Creative Studio.
+
         Every artwork tells a story.
+
+        Art never sleeps...
     -->
 
 
