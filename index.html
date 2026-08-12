@@ -1,1 +1,294 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SANAVLIS Creative Studio</title>
+
+    <meta name="description" content="Vintage Motorsport, Progressive Rock and Creative Fan Art by Sanavlis.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+
+            background:#111111;
+            color:#F5F5F5;
+            font-family:'Inter',sans-serif;
+            overflow-x:hidden;
+
+        }
+
+        .hero{
+
+            min-height:100vh;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:40px;
+
+        }
+
+        .logo{
+
+            width:170px;
+            margin-bottom:35px;
+            transition:.6s ease;
+
+        }
+
+        .logo:hover{
+
+            transform:rotate(8deg);
+
+        }
+
+        h1{
+
+            font-family:'Cormorant Garamond',serif;
+            font-size:72px;
+            letter-spacing:12px;
+            font-weight:600;
+
+        }
+
+        .subtitle{
+
+            margin-top:12px;
+            color:#C8A24A;
+            font-size:20px;
+            letter-spacing:3px;
+            text-transform:uppercase;
+
+        }
+
+        .description{
+
+            max-width:650px;
+            margin-top:30px;
+            font-size:20px;
+            line-height:1.7;
+            color:#d8d8d8;
+
+        }
+
+        .button{
+
+            margin-top:50px;
+            display:inline-block;
+            padding:18px 40px;
+            border:1px solid #C8A24A;
+            color:#F5F5F5;
+            text-decoration:none;
+            letter-spacing:3px;
+            text-transform:uppercase;
+            transition:.35s;
+
+        }
+
+        .button:hover{
+
+            background:#C8A24A;
+            color:#111111;
+
+        }
+
+        .section{
+
+            padding:90px 25px;
+
+        }
+
+        .section-title{
+
+            text-align:center;
+            font-family:'Cormorant Garamond',serif;
+            font-size:48px;
+            margin-bottom:60px;
+
+        }
+
+        .grid{
+
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+            gap:30px;
+            max-width:1200px;
+            margin:auto;
+
+        }
+
+        .card{
+
+            border:1px solid #2a2a2a;
+            padding:28px;
+            transition:.3s;
+
+        }
+
+        .card:hover{
+
+            border-color:#C8A24A;
+            transform:translateY(-6px);
+
+        }
+
+        .card h3{
+
+            font-family:'Cormorant Garamond',serif;
+            font-size:30px;
+            margin-bottom:15px;
+
+        }
+
+        .card p{
+
+            color:#bbbbbb;
+            line-height:1.6;
+
+        }
+
+        footer{
+
+            border-top:1px solid #222;
+            text-align:center;
+            padding:55px 20px;
+            color:#888;
+
+        }
+
+        @media(max-width:700px){
+
+            h1{
+
+                font-size:48px;
+                letter-spacing:7px;
+
+            }
+
+            .logo{
+
+                width:135px;
+
+            }
+
+            .description{
+
+                font-size:18px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+    <img src="https://raw.githubusercontent.com/SanavlisStudiosCompany/sanavlisstudioscompany.github.io/main/assets/logo-sanavlis.png"
+         alt="Sanavlis Logo"
+         class="logo"
+         onerror="this.style.display='none'">
+
+    <h1>SANAVLIS</h1>
+
+    <div class="subtitle">Creative Studio</div>
+
+    <p class="description">
+
+        Inspired by Vintage Motorsport, Progressive Rock,
+        Japanese Retro Culture and Timeless Creative Design.
+
+    </p>
+
+    <a href="#collections" class="button">
+
+        Explore Collection
+
+    </a>
+
+</section>
+
+<section class="section" id="collections">
+
+    <h2 class="section-title">
+
+        Featured Collections
+
+    </h2>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h3>🏁 Motorsport</h3>
+
+            <p>Vintage racing inspired artwork celebrating legendary cars, drivers and iconic liveries.</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🎸 Progressive Rock</h3>
+
+            <p>Creative reinterpretations inspired by timeless albums and classic rock culture.</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>😸 Cat Collection</h3>
+
+            <p>Where classic music meets clever feline humor.</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>🇯🇵 Japanese Retro</h3>
+
+            <p>Minimalist designs inspired by Japanese signs, typography and nostalgia.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p><strong>SANAVLIS Creative Studio</strong></p>
+
+    <p>Vintage Motorsport • Progressive Rock • Creative Design</p>
+
+    <br>
+
+    <p>© 2026 Sanavlis</p>
+
+</footer>
+
+<!--
+Designed with passion.
+Charlie Brown Chat Stevens
+Director Criativo Honorário
+-->
+
+</body>
+</html>
