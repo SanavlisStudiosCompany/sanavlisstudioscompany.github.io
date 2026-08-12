@@ -1,13 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>SANAVLIS Creative Studio</title>
 
-    <meta name="description" content="Vintage Motorsport, Progressive Rock and Creative Fan Art by Sanavlis.">
+    <meta name="description" content="Sanavlis Creative Studio — Vintage Motorsport, Music, Geek & Nerd Art, Parodies, Japanese Retro and Creative Design.">
+
+    <meta name="keywords" content="vintage motorsport art, geek art, nerd art, parody art, progressive rock art, Japanese retro art, cat art, Sanavlis">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,179 +18,329 @@
 
     <style>
 
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body{
-
-            background:#111111;
-            color:#F5F5F5;
-            font-family:'Inter',sans-serif;
-            overflow-x:hidden;
-
+        html {
+            scroll-behavior: smooth;
         }
 
-        .hero{
+        body {
 
-            min-height:100vh;
-            display:flex;
-            flex-direction:column;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:40px;
+            background: #111111;
+            color: #F5F5F5;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
 
         }
 
-        .logo{
+        /* =========================
+           HERO
+        ========================= */
 
-            width:170px;
-            margin-bottom:35px;
-            transition:.6s ease;
+        .hero {
 
-        }
+            min-height: 100vh;
 
-        .logo:hover{
+            display: flex;
+            flex-direction: column;
 
-            transform:rotate(8deg);
+            justify-content: center;
+            align-items: center;
 
-        }
+            text-align: center;
 
-        h1{
-
-            font-family:'Cormorant Garamond',serif;
-            font-size:72px;
-            letter-spacing:12px;
-            font-weight:600;
+            padding: 40px 25px;
 
         }
 
-        .subtitle{
+        .logo {
 
-            margin-top:12px;
-            color:#C8A24A;
-            font-size:20px;
-            letter-spacing:3px;
-            text-transform:uppercase;
+            width: 170px;
 
-        }
+            margin-bottom: 35px;
 
-        .description{
-
-            max-width:650px;
-            margin-top:30px;
-            font-size:20px;
-            line-height:1.7;
-            color:#d8d8d8;
+            transition: 0.6s ease;
 
         }
 
-        .button{
+        /* Sanavlis Easter Egg */
 
-            margin-top:50px;
-            display:inline-block;
-            padding:18px 40px;
-            border:1px solid #C8A24A;
-            color:#F5F5F5;
-            text-decoration:none;
-            letter-spacing:3px;
-            text-transform:uppercase;
-            transition:.35s;
+        .logo:hover {
+
+            transform: rotate(8deg);
 
         }
 
-        .button:hover{
+        h1 {
 
-            background:#C8A24A;
-            color:#111111;
+            font-family: 'Cormorant Garamond', serif;
 
-        }
+            font-size: 72px;
 
-        .section{
+            letter-spacing: 12px;
 
-            padding:90px 25px;
-
-        }
-
-        .section-title{
-
-            text-align:center;
-            font-family:'Cormorant Garamond',serif;
-            font-size:48px;
-            margin-bottom:60px;
+            font-weight: 600;
 
         }
 
-        .grid{
+        .subtitle {
 
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-            gap:30px;
-            max-width:1200px;
-            margin:auto;
+            margin-top: 12px;
 
-        }
+            color: #C8A24A;
 
-        .card{
+            font-size: 20px;
 
-            border:1px solid #2a2a2a;
-            padding:28px;
-            transition:.3s;
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
 
         }
 
-        .card:hover{
+        .description {
 
-            border-color:#C8A24A;
-            transform:translateY(-6px);
+            max-width: 700px;
 
-        }
+            margin-top: 30px;
 
-        .card h3{
+            font-size: 20px;
 
-            font-family:'Cormorant Garamond',serif;
-            font-size:30px;
-            margin-bottom:15px;
+            line-height: 1.7;
 
-        }
-
-        .card p{
-
-            color:#bbbbbb;
-            line-height:1.6;
+            color: #D8D8D8;
 
         }
 
-        footer{
+        .button {
 
-            border-top:1px solid #222;
-            text-align:center;
-            padding:55px 20px;
-            color:#888;
+            margin-top: 50px;
+
+            display: inline-block;
+
+            padding: 18px 40px;
+
+            border: 1px solid #C8A24A;
+
+            color: #F5F5F5;
+
+            text-decoration: none;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            transition: 0.35s;
 
         }
 
-        @media(max-width:700px){
+        .button:hover {
 
-            h1{
+            background: #C8A24A;
 
-                font-size:48px;
-                letter-spacing:7px;
+            color: #111111;
+
+        }
+
+        /* =========================
+           COLLECTIONS
+        ========================= */
+
+        .section {
+
+            padding: 100px 25px;
+
+        }
+
+        .section-title {
+
+            text-align: center;
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 52px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .section-intro {
+
+            max-width: 700px;
+
+            margin: 0 auto 65px auto;
+
+            text-align: center;
+
+            color: #999999;
+
+            line-height: 1.7;
+
+        }
+
+        .grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+            gap: 30px;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+        }
+
+        .card {
+
+            border: 1px solid #2A2A2A;
+
+            padding: 35px 30px;
+
+            min-height: 220px;
+
+            transition: 0.3s;
+
+        }
+
+        .card:hover {
+
+            border-color: #C8A24A;
+
+            transform: translateY(-6px);
+
+        }
+
+        .card-icon {
+
+            font-size: 32px;
+
+            margin-bottom: 18px;
+
+        }
+
+        .card h3 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .card p {
+
+            color: #BBBBBB;
+
+            line-height: 1.7;
+
+            font-size: 15px;
+
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            padding: 100px 25px;
+
+        }
+
+        .about h2 {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 52px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .about p {
+
+            color: #BBBBBB;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            border-top: 1px solid #222222;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            color: #888888;
+
+        }
+
+        footer strong {
+
+            color: #F5F5F5;
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: 24px;
+
+        }
+
+        footer p {
+
+            margin-top: 10px;
+
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            h1 {
+
+                font-size: 48px;
+
+                letter-spacing: 7px;
 
             }
 
-            .logo{
+            .logo {
 
-                width:135px;
+                width: 135px;
 
             }
 
-            .description{
+            .description {
 
-                font-size:18px;
+                font-size: 18px;
+
+            }
+
+            .section-title,
+            .about h2 {
+
+                font-size: 42px;
 
             }
 
@@ -198,23 +350,33 @@
 
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-    <img src="https://raw.githubusercontent.com/SanavlisStudiosCompany/sanavlisstudioscompany.github.io/main/assets/logo-sanavlis.png"
-         alt="Sanavlis Logo"
-         class="logo"
-         onerror="this.style.display='none'">
+    <img
+        src="https://raw.githubusercontent.com/SanavlisStudiosCompany/sanavlisstudioscompany.github.io/main/assets/logo-sanavlis.png"
+        alt="Sanavlis Creative Studio Logo"
+        class="logo"
+        onerror="this.style.display='none'"
+    >
 
     <h1>SANAVLIS</h1>
 
-    <div class="subtitle">Creative Studio</div>
+    <div class="subtitle">
+        Creative Studio
+    </div>
 
     <p class="description">
 
-        Inspired by Vintage Motorsport, Progressive Rock,
-        Japanese Retro Culture and Timeless Creative Design.
+        Where Motorsport, Music, Geek Culture,
+        Retro Design and Imagination become Art.
 
     </p>
 
@@ -226,69 +388,180 @@
 
 </section>
 
+
+<!-- =========================
+     COLLECTIONS
+========================= -->
+
 <section class="section" id="collections">
 
     <h2 class="section-title">
-
         Featured Collections
-
     </h2>
+
+    <p class="section-intro">
+
+        A creative universe inspired by speed, music,
+        pop culture, nostalgia, humor and imagination.
+
+    </p>
+
 
     <div class="grid">
 
-        <div class="card">
-
-            <h3>🏁 Motorsport</h3>
-
-            <p>Vintage racing inspired artwork celebrating legendary cars, drivers and iconic liveries.</p>
-
-        </div>
 
         <div class="card">
 
-            <h3>🎸 Progressive Rock</h3>
+            <div class="card-icon">🏁</div>
 
-            <p>Creative reinterpretations inspired by timeless albums and classic rock culture.</p>
+            <h3>Vintage Motorsport</h3>
+
+            <p>
+                Classic racing cars, legendary drivers,
+                iconic liveries and the golden age of motorsport.
+            </p>
 
         </div>
+
 
         <div class="card">
 
-            <h3>😸 Cat Collection</h3>
+            <div class="card-icon">🎸</div>
 
-            <p>Where classic music meets clever feline humor.</p>
+            <h3>Music & Progressive Rock</h3>
+
+            <p>
+                Creative artwork inspired by timeless albums,
+                progressive rock and the visual culture of music.
+            </p>
 
         </div>
+
 
         <div class="card">
 
-            <h3>🇯🇵 Japanese Retro</h3>
+            <div class="card-icon">🤓</div>
 
-            <p>Minimalist designs inspired by Japanese signs, typography and nostalgia.</p>
+            <h3>Geek & Nerd Art</h3>
+
+            <p>
+                Designs inspired by games, movies, comics,
+                technology, science fiction and geek culture.
+            </p>
 
         </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🎭</div>
+
+            <h3>Parody Art</h3>
+
+            <p>
+                Clever reinterpretations, visual wordplay
+                and humorous takes on iconic cultural references.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">😸</div>
+
+            <h3>Cat Art & Purrodies</h3>
+
+            <p>
+                Where cats, music, pop culture and
+                completely unnecessary puns come together.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🇯🇵</div>
+
+            <h3>Japanese Retro</h3>
+
+            <p>
+                Japanese signs, typography, visual culture,
+                nostalgia and minimalist retro design.
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about">
+
+    <h2>About Sanavlis</h2>
+
+    <p>
+
+        Sanavlis Creative Studio is an independent
+        Brazilian design studio dedicated to creating
+        original artwork inspired by the things we love.
+
+        From vintage motorsport and progressive rock
+        to geek culture, Japanese retro design,
+        cats and clever parodies — every collection
+        begins with an idea.
+
+    </p>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
-    <p><strong>SANAVLIS Creative Studio</strong></p>
+    <p>
 
-    <p>Vintage Motorsport • Progressive Rock • Creative Design</p>
+        <strong>SANAVLIS</strong>
+
+    </p>
+
+    <p>
+        Creative Studio
+    </p>
+
+    <p>
+        Vintage Motorsport • Music • Geek • Retro • Parody
+    </p>
 
     <br>
 
-    <p>© 2026 Sanavlis</p>
+    <p>
+        © 2026 Sanavlis Creative Studio
+    </p>
+
+
+    <!-- Easter Egg -->
+
+    <!--
+        Designed with passion.
+        Sanavlis Creative Studio.
+        Every artwork tells a story.
+    -->
+
 
 </footer>
 
-<!--
-Designed with passion.
-Charlie Brown Chat Stevens
-Director Criativo Honorário
--->
 
 </body>
+
 </html>
