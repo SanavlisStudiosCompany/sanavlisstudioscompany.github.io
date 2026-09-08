@@ -558,76 +558,485 @@
         }
 
 
-        /* =================================
-           ABOUT
-        ================================= */
+        /* ========================================
+   ABOUT SANAVLIS
+======================================== */
 
-        .about {
+.about-sanavlis {
+    width: 100%;
+    background:
+        radial-gradient(
+            circle at 72% 22%,
+            rgba(200, 162, 74, 0.04),
+            transparent 34%
+        ),
+        #080808;
 
-            max-width: 900px;
-
-            margin: auto;
-
-            text-align: center;
-
-            padding: 100px 25px;
-
-        }
-
-        .about h2 {
-
-            font-family: 'Cormorant Garamond', serif;
-
-            font-size: 52px;
-
-            margin-bottom: 30px;
-
-        }
-
-        .about p {
-
-            color: #BBBBBB;
-
-            font-size: 18px;
-
-            line-height: 1.9;
-
-        }
+    color: #F5F5F5;
+    overflow: hidden;
+}
 
 
-        /* =================================
-           FOOTER
-        ================================= */
+/* ===============================
+   BLOCO PRINCIPAL
+=============================== */
 
-        footer {
+.about-main {
+    display: grid;
+    grid-template-columns: 1fr 1.08fr;
+    min-height: 500px;
+}
 
-            border-top: 1px solid #222222;
 
-            text-align: center;
+/* ===============================
+   RETRATO
+=============================== */
 
-            padding: 60px 20px;
+.about-portrait {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    background: #080808;
+}
 
-            color: #888888;
+.about-portrait img {
+    position: absolute;
+    inset: 0;
 
-        }
+    width: 100%;
+    height: 100%;
 
-        footer strong {
+    object-fit: cover;
+    object-position: center;
 
-            color: #F5F5F5;
+    filter:
+        grayscale(100%)
+        contrast(1.08)
+        brightness(0.88);
 
-            font-family: 'Cormorant Garamond', serif;
+    transform: scale(1.015);
 
-            font-size: 24px;
+    transition:
+        transform 1.2s ease,
+        filter 1.2s ease;
+}
 
-            letter-spacing: 4px;
+.about-portrait:hover img {
+    transform: scale(1.035);
 
-        }
+    filter:
+        grayscale(100%)
+        contrast(1.10)
+        brightness(0.95);
+}
 
-        footer p {
 
-            margin-top: 10px;
+/* Fade da foto para o preto */
 
-        }
+.portrait-fade {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 58%,
+            rgba(8, 8, 8, 0.30) 74%,
+            rgba(8, 8, 8, 0.82) 92%,
+            #080808 100%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(8, 8, 8, 0.55) 0%,
+            transparent 28%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ===============================
+   TEXTO
+=============================== */
+
+.about-content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        70px
+        clamp(45px, 7vw, 120px)
+        65px
+        clamp(45px, 5vw, 90px);
+}
+
+.about-content h2 {
+    margin: 0 0 24px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(42px, 4vw, 64px);
+    font-weight: 500;
+
+    line-height: 1;
+    letter-spacing: -0.02em;
+
+    color: #F5F5F5;
+}
+
+.about-content h2 span {
+    color: #C8A24A;
+}
+
+.about-content p {
+    max-width: 760px;
+
+    margin: 0 0 13px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 15px;
+    font-weight: 300;
+
+    line-height: 1.7;
+
+    color: #BBBBBB;
+}
+
+
+/* ===============================
+   ART NEVER SLEEPS
+=============================== */
+
+.art-never-sleeps {
+    align-self: flex-end;
+
+    margin-top: 32px;
+    margin-right: 4%;
+
+    font-family: "Cormorant Garamond", Georgia, serif;
+
+    font-size: clamp(30px, 3.4vw, 52px);
+
+    font-style: italic;
+    font-weight: 400;
+
+    color: #C8A24A;
+
+    letter-spacing: 0.02em;
+
+    transform: rotate(-6deg);
+
+    opacity: 0.95;
+
+    text-shadow:
+        0 0 25px rgba(200, 162, 74, 0.10);
+}
+
+
+/* ========================================
+   DIVISÓRIA DOURADA
+======================================== */
+
+.footer-divider {
+    position: relative;
+
+    width: calc(100% - 80px);
+    height: 1px;
+
+    margin: 0 auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #8F742F 8%,
+            #C8A24A 50%,
+            #8F742F 92%,
+            transparent
+        );
+}
+
+.footer-divider span {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 13px;
+    height: 13px;
+
+    background: #C8A24A;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(45deg);
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.sanavlis-footer {
+    display: grid;
+
+    grid-template-columns:
+        minmax(250px, 1fr)
+        minmax(420px, 1.5fr)
+        minmax(250px, 1fr);
+
+    align-items: center;
+
+    gap: 40px;
+
+    padding:
+        46px
+        clamp(50px, 7vw, 120px)
+        48px;
+
+    background: #080808;
+}
+
+
+/* ESQUERDA */
+
+.footer-founder {
+    text-align: center;
+}
+
+.founder-signature {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 42px;
+    font-style: italic;
+
+    color: #F5F5F5;
+
+    line-height: 1;
+
+    transform: rotate(-5deg);
+
+    margin-bottom: 16px;
+}
+
+.founder-title {
+    font-family: "Inter", sans-serif;
+
+    font-size: 10px;
+    font-weight: 400;
+
+    letter-spacing: 0.32em;
+
+    color: #BBBBBB;
+}
+
+
+/* CENTRO */
+
+.footer-brand {
+    text-align: center;
+}
+
+.footer-sanavlis {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 31px;
+    font-weight: 500;
+
+    letter-spacing: 0.24em;
+
+    color: #F5F5F5;
+
+    margin-left: 0.24em;
+}
+
+.footer-studio {
+    margin-top: 4px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 0.42em;
+
+    color: #C8A24A;
+
+    margin-left: 0.42em;
+}
+
+.footer-categories {
+    margin-top: 21px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 12px;
+    font-weight: 300;
+
+    color: #BBBBBB;
+}
+
+.footer-categories span {
+    margin: 0 8px;
+
+    color: #C8A24A;
+}
+
+.footer-copyright {
+    margin-top: 14px;
+
+    font-family: "Inter", sans-serif;
+
+    font-size: 11px;
+    font-weight: 300;
+
+    line-height: 1.65;
+
+    color: #888888;
+}
+
+
+/* DIREITA */
+
+.footer-social {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 28px;
+
+    margin-bottom: 24px;
+}
+
+.social-icons a {
+    color: #F5F5F5;
+
+    font-size: 25px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #C8A24A;
+
+    transform: translateY(-3px);
+}
+
+.footer-mantra {
+    font-family: "Inter", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 0.42em;
+
+    color: #C8A24A;
+
+    white-space: nowrap;
+}
+
+.footer-mantra span {
+    margin: 0 9px;
+
+    color: #8F742F;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE DO NOVO ABOUT / FOOTER
+======================================== */
+
+@media (max-width: 950px) {
+
+    .about-main {
+        grid-template-columns: 1fr;
+    }
+
+    .about-portrait {
+        min-height: 440px;
+    }
+
+    .portrait-fade {
+        background:
+            linear-gradient(
+                0deg,
+                #080808 0%,
+                rgba(8, 8, 8, 0.35) 30%,
+                transparent 65%
+            );
+    }
+
+    .about-content {
+        padding: 55px 8%;
+    }
+
+    .art-never-sleeps {
+        align-self: center;
+
+        margin:
+            30px
+            0
+            10px;
+    }
+
+    .sanavlis-footer {
+        grid-template-columns: 1fr;
+
+        padding: 45px 8%;
+
+        gap: 45px;
+    }
+
+    .footer-brand {
+        order: 1;
+    }
+
+    .footer-founder {
+        order: 2;
+    }
+
+    .footer-social {
+        order: 3;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .about-portrait {
+        min-height: 360px;
+    }
+
+    .about-content h2 {
+        font-size: 43px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .footer-divider {
+        width: calc(100% - 36px);
+    }
+
+    .footer-categories {
+        line-height: 2;
+    }
+
+    .footer-mantra {
+        letter-spacing: 0.25em;
+    }
+
+}
 
 
         /* =================================
@@ -1033,69 +1442,147 @@
      ABOUT
 ================================= -->
 
-<section class="about"
-         id="about">
+<!-- =========================
+     ABOUT SANAVLIS
+========================= -->
 
-    <h2>
-        About Sanavlis
-    </h2>
+<section class="about-sanavlis" id="about">
+
+    <div class="about-main">
+
+        <!-- Retrato / ambiente criativo -->
+        <div class="about-portrait">
+
+            <img
+                src="assets/about-sanavlis.webp"
+                alt="San Avlis — Founder and Creative Director of Sanavlis Creative Studio"
+            >
+
+            <div class="portrait-fade"></div>
+
+        </div>
 
 
-    <p>
+        <!-- Texto About -->
+        <div class="about-content">
 
-        Sanavlis Creative Studio is an independent
-        Brazilian design studio dedicated to creating
-        original artwork inspired by the things we love.
+            <h2>
+                About <span>Sanavlis</span>
+            </h2>
 
-        From vintage motorsport and progressive rock
-        to geek culture, Japanese retro design,
-        cats and clever parodies — every collection
-        begins with an idea.
+            <p>
+                Sanavlis Creative Studio is an independent Brazilian design
+                studio dedicated to creating original artwork inspired by
+                the things we love.
+            </p>
 
-    </p>
+            <p>
+                From vintage motorsport and progressive rock to geek culture,
+                Japanese retro design, cats and clever parodies — every
+                collection begins with an idea.
+            </p>
+
+            <p>
+                Here, art, passion and imagination come together to turn
+                everyday inspirations into something unique.
+            </p>
+
+            <div class="art-never-sleeps">
+                Art never sleeps...
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LINHA DOURADA -->
+    <div class="footer-divider">
+        <span></span>
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer class="sanavlis-footer">
+
+        <!-- ESQUERDA -->
+        <div class="footer-founder">
+
+            <div class="founder-signature">
+                San Avlis
+            </div>
+
+            <div class="founder-title">
+                FOUNDER &amp; CREATIVE DIRECTOR
+            </div>
+
+        </div>
+
+
+        <!-- CENTRO -->
+        <div class="footer-brand">
+
+            <div class="footer-sanavlis">
+                SANAVLIS
+            </div>
+
+            <div class="footer-studio">
+                CREATIVE STUDIO
+            </div>
+
+            <div class="footer-categories">
+                Vintage Motorsport
+                <span>•</span>
+                Music
+                <span>•</span>
+                Geek
+                <span>•</span>
+                Retro
+                <span>•</span>
+                Parody
+            </div>
+
+            <div class="footer-copyright">
+                © 2026 Sanavlis Creative Studio<br>
+                All Rights Reserved
+            </div>
+
+        </div>
+
+
+        <!-- DIREITA -->
+        <div class="footer-social">
+
+            <div class="social-icons">
+
+                <a href="#" aria-label="Instagram">
+                    <i class="bi bi-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="Pinterest">
+                    <i class="bi bi-pinterest"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="bi bi-youtube"></i>
+                </a>
+
+            </div>
+
+            <div class="footer-mantra">
+                DREAM <span>•</span>
+                DESIGN <span>•</span>
+                CREATE
+            </div>
+
+        </div>
+
+    </footer>
 
 </section>
-
-
-
-<!-- =================================
-     FOOTER
-================================= -->
-
-<footer>
-
-    <p>
-        <strong>
-            SANAVLIS
-        </strong>
-    </p>
-
-    <p>
-        Creative Studio
-    </p>
-
-    <p>
-        Vintage Motorsport • Music • Geek • Retro • Parody
-    </p>
-
-    <br>
-
-    <p>
-        © 2026 Sanavlis Creative Studio
-    </p>
-
-
-    <!--
-        SANAVLIS Creative Studio
-        Designed with passion.
-
-        Every artwork tells a story.
-
-        Art never sleeps...
-    -->
-
-
-</footer>
 
 
 </body>
