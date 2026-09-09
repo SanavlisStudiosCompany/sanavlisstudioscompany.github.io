@@ -1062,6 +1062,59 @@
     position: relative;
     z-index: 3;
 }
+        /* =========================================
+   PARODY ART — MISREGISTRATION EFFECT
+   ========================================= */
+
+.parody-card::after {
+    content: "";
+
+    position: absolute;
+    inset: -10%;
+
+    background:
+        linear-gradient(
+            18deg,
+            transparent 0 35%,
+            rgba(200,162,74,0.16) 35% 38%,
+            transparent 38% 100%
+        ),
+        linear-gradient(
+            -18deg,
+            transparent 0 58%,
+            rgba(245,245,245,0.10) 58% 61%,
+            transparent 61% 100%
+        );
+
+    opacity: 0;
+
+    transform:
+        translateX(18px)
+        translateY(-10px)
+        scale(1.05);
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.80s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.parody-card:hover::after {
+    opacity: 0.88;
+
+    transform:
+        translateX(0)
+        translateY(0)
+        scale(1);
+}
+
+.parody-card > * {
+    position: relative;
+    z-index: 3;
+}
         .card h3 {
 
             font-family: 'Cormorant Garamond', serif;
@@ -1856,6 +1909,7 @@
 <div class="collections-flag-bg" aria-hidden="true"></div>
     <div class="collections-music-bg" aria-hidden="true"></div>
     <div class="collections-geek-bg" aria-hidden="true"></div>
+    <div class="collections-parody-bg" aria-hidden="true"></div>
     <h2 class="section-title">
 
         Featured Collections
@@ -1933,7 +1987,7 @@
         </div>
 
 
-        <div class="card">
+        <div class="card parody-card">
 
             <div class="card-icon">🎭</div>
 
