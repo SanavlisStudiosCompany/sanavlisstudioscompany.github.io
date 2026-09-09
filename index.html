@@ -730,7 +730,56 @@
     transform:
         translateY(0)
         scale(1);
-}       .grid {
+}       
+     /* ========================================
+   COLLECTIONS — PARODY BACKGROUND
+   MISREGISTRATION / OFFSET PRINT
+======================================== */
+
+.collections-parody-bg {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            16deg,
+            transparent 0 40%,
+            rgba(200,162,74,0.10) 40% 43%,
+            transparent 43% 100%
+        ),
+        linear-gradient(
+            -16deg,
+            transparent 0 57%,
+            rgba(245,245,245,0.055) 57% 60%,
+            transparent 60% 100%
+        );
+
+    transform:
+        translateX(55px)
+        scale(1.04);
+
+    transition:
+        opacity 0.85s ease,
+        transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+    z-index: 0;
+}
+
+
+/* PARODY — FUNDO SURGE */
+
+#collections:has(.parody-card:hover)
+.collections-parody-bg {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        scale(1);
+}   
+        .grid {
 
             display: grid;
 
