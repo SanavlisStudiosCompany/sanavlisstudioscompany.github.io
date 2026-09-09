@@ -948,6 +948,63 @@
 
     z-index: 3;
 }
+
+        /* =========================================
+   GEEK & NERD ART — DIGITAL GRID
+   ========================================= */
+
+.geek-card::after {
+    content: "";
+
+    position: absolute;
+    inset: -20%;
+
+    background:
+        linear-gradient(
+            rgba(200, 162, 74, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(200, 162, 74, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 28px 28px;
+
+    opacity: 0;
+
+    transform:
+        perspective(500px)
+        rotateX(58deg)
+        scale(1.25)
+        translateY(30px);
+
+    transform-origin: center bottom;
+
+    transition:
+        opacity 0.65s ease,
+        transform 0.8s ease;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.geek-card:hover::after {
+    opacity: 0.72;
+
+    transform:
+        perspective(500px)
+        rotateX(58deg)
+        scale(1)
+        translateY(0);
+}
+
+.geek-card > * {
+    position: relative;
+    z-index: 3;
+}
         .card h3 {
 
             font-family: 'Cormorant Garamond', serif;
@@ -1741,6 +1798,7 @@
          id="collections">
 <div class="collections-flag-bg" aria-hidden="true"></div>
     <div class="collections-music-bg" aria-hidden="true"></div>
+    <div class="collections-geek-bg" aria-hidden="true"></div>
     <h2 class="section-title">
 
         Featured Collections
@@ -1799,7 +1857,7 @@
         </div>
 
 
-        <div class="card">
+        <div class="card geek-card">
 
             <div class="card-icon">🤓</div>
 
