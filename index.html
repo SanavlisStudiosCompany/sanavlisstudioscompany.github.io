@@ -672,7 +672,100 @@
         contrast(1.08)
         brightness(0.78);
 }
-        
+       /* ========================================
+   COLLECTIONS — GEEK / DIGITAL MATRIX
+======================================== */
+
+.collections-geek-bg {
+    position: absolute;
+
+    top: 0;
+    right: -8%;
+
+    width: 82%;
+    height: 110%;
+
+    opacity: 0;
+
+    background:
+        linear-gradient(
+            rgba(200,162,74,0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(200,162,74,0.08) 1px,
+            transparent 1px
+        ),
+        radial-gradient(
+            circle at 72% 45%,
+            rgba(200,162,74,0.12),
+            transparent 42%
+        );
+
+    background-size:
+        52px 52px,
+        52px 52px,
+        100% 100%;
+
+    transform:
+        perspective(900px)
+        rotateX(62deg)
+        translateY(150px)
+        scale(1.18);
+
+    transform-origin: center bottom;
+
+    filter:
+        brightness(0.72)
+        contrast(1.08);
+
+    -webkit-mask-image:
+        linear-gradient(
+            to top,
+            black 0%,
+            rgba(0,0,0,0.95) 40%,
+            rgba(0,0,0,0.45) 70%,
+            transparent 100%
+        );
+
+    mask-image:
+        linear-gradient(
+            to top,
+            black 0%,
+            rgba(0,0,0,0.95) 40%,
+            rgba(0,0,0,0.45) 70%,
+            transparent 100%
+        );
+
+    transition:
+        opacity 0.95s ease,
+        transform 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 0.95s ease;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* QUANDO O GEEK RECEBE O MOUSE */
+
+#collections:has(.geek-card:hover)
+.collections-geek-bg {
+
+    opacity: 0.24;
+
+    transform:
+        perspective(900px)
+        rotateX(58deg)
+        translateY(40px)
+        scale(1);
+
+    filter:
+        brightness(0.88)
+        contrast(1.10);
+} 
         .grid {
 
             display: grid;
