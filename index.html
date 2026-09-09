@@ -575,6 +575,104 @@
     }
 
 }
+        /* ========================================
+   COLLECTIONS — MUSIC / PROGRESSIVE ROCK
+======================================== */
+
+.collections-music-bg {
+    position: absolute;
+
+    top: -12%;
+    right: -8%;
+
+    width: 78%;
+    height: 120%;
+
+    opacity: 0;
+
+    background:
+        radial-gradient(
+            circle at 72% 48%,
+            transparent 0 9%,
+            rgba(200,162,74,0.05) 9.5% 10.5%,
+            transparent 11% 15%,
+            rgba(245,245,245,0.045) 15.5% 16.5%,
+            transparent 17% 22%,
+            rgba(200,162,74,0.05) 22.5% 23.5%,
+            transparent 24% 30%,
+            rgba(245,245,245,0.04) 30.5% 31.5%,
+            transparent 32% 39%,
+            rgba(200,162,74,0.045) 39.5% 40.5%,
+            transparent 41% 100%
+        ),
+
+        repeating-radial-gradient(
+            circle at 72% 48%,
+            rgba(255,255,255,0.025) 0 1px,
+            transparent 1px 7px
+        ),
+
+        radial-gradient(
+            ellipse at 75% 50%,
+            rgba(200,162,74,0.06),
+            transparent 62%
+        );
+
+    transform:
+        translateX(120px)
+        scale(1.12);
+
+    transform-origin: right center;
+
+    filter:
+        contrast(1.06)
+        brightness(0.55);
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at 72% 50%,
+            black 0%,
+            rgba(0,0,0,0.95) 34%,
+            rgba(0,0,0,0.55) 58%,
+            transparent 83%
+        );
+
+    mask-image:
+        radial-gradient(
+            ellipse at 72% 50%,
+            black 0%,
+            rgba(0,0,0,0.95) 34%,
+            rgba(0,0,0,0.55) 58%,
+            transparent 83%
+        );
+
+    transition:
+        opacity 1.05s ease,
+        transform 1.30s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.05s ease;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* QUANDO O MUSIC RECEBE O MOUSE */
+
+#collections:has(.music-card:hover)
+.collections-music-bg {
+
+    opacity: 0.18;
+
+    transform:
+        translateX(0)
+        scale(1);
+
+    filter:
+        contrast(1.08)
+        brightness(0.62);
+}
+        
         .grid {
 
             display: grid;
@@ -803,7 +901,53 @@
             margin-bottom: 18px;
 
         }
+/* ========================================
+   MUSIC CARD — VINYL GHOST
+======================================== */
 
+.music-card::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 78% 50%,
+            transparent 0 18%,
+            rgba(200,162,74,0.11) 18.5% 20%,
+            transparent 20.5% 28%,
+            rgba(245,245,245,0.08) 28.5% 30%,
+            transparent 30.5% 39%,
+            rgba(200,162,74,0.08) 39.5% 41%,
+            transparent 41.5%
+        );
+
+    opacity: 0;
+
+    transform: scale(1.10);
+
+    transition:
+        opacity 0.70s ease,
+        transform 0.90s cubic-bezier(0.22, 1, 0.36, 1);
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.music-card:hover::after {
+    opacity: 0.55;
+
+    transform: scale(1);
+}
+
+.music-card > * {
+    position: relative;
+
+    z-index: 3;
+}
         .card h3 {
 
             font-family: 'Cormorant Garamond', serif;
@@ -1596,6 +1740,7 @@
 <section class="section"
          id="collections">
 <div class="collections-flag-bg" aria-hidden="true"></div>
+    <div class="collections-music-bg" aria-hidden="true"></div>
     <h2 class="section-title">
 
         Featured Collections
@@ -1635,7 +1780,7 @@
         </div>
 
 
-        <div class="card">
+        <div class="card music-card">
 
             <div class="card-icon">🎸</div>
 
