@@ -439,7 +439,142 @@
             line-height: 1.7;
 
         }
+/* ========================================
+   COLLECTIONS — GIANT CHECKERED SHADOW
+======================================== */
 
+#collections {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+
+/* BANDEIRA GIGANTE */
+
+.collections-flag-bg {
+    position: absolute;
+
+    top: 5%;
+    right: -10%;
+
+    width: 78%;
+    height: 92%;
+
+    background:
+        conic-gradient(
+            from 90deg,
+            rgba(245, 245, 245, 0.30) 25%,
+            rgba(4, 4, 4, 0.78) 0 50%,
+            rgba(245, 245, 245, 0.30) 0 75%,
+            rgba(4, 4, 4, 0.78) 0
+        );
+
+    background-size: 95px 95px;
+
+    opacity: 0;
+
+    transform:
+        translateX(130px)
+        rotate(-7deg)
+        skewY(-7deg)
+        scale(1.14);
+
+    transform-origin: right center;
+
+    filter:
+        contrast(1.10)
+        brightness(0.40)
+        blur(0.3px);
+
+    /*
+       Faz a bandeira desaparecer
+       gradualmente nas sombras.
+    */
+
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse at 72% 50%,
+            black 0%,
+            rgba(0,0,0,0.95) 30%,
+            rgba(0,0,0,0.55) 58%,
+            transparent 82%
+        );
+
+    mask-image:
+        radial-gradient(
+            ellipse at 72% 50%,
+            black 0%,
+            rgba(0,0,0,0.95) 30%,
+            rgba(0,0,0,0.55) 58%,
+            transparent 82%
+        );
+
+    transition:
+        opacity 1.05s ease,
+        transform 1.30s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.05s ease;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* ========================================
+   QUANDO O MOTORSPORT RECEBE O MOUSE
+======================================== */
+
+#collections:has(.motorsport-card:hover)
+.collections-flag-bg {
+
+    opacity: 0.23;
+
+    transform:
+        translateX(0)
+        rotate(-4deg)
+        skewY(-5deg)
+        scale(1);
+
+    filter:
+        contrast(1.08)
+        brightness(0.52)
+        blur(0px);
+}
+
+
+/* CONTEÚDO SEMPRE ACIMA DA BANDEIRA */
+
+#collections .section-title,
+#collections .section-intro,
+#collections .grid {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* MOBILE:
+   efeito muito mais discreto
+*/
+
+@media (max-width: 900px) {
+
+    .collections-flag-bg {
+        width: 115%;
+        height: 75%;
+
+        top: 15%;
+        right: -45%;
+
+        background-size: 70px 70px;
+    }
+
+    #collections:has(.motorsport-card:hover)
+    .collections-flag-bg {
+        opacity: 0.13;
+    }
+
+}
         .grid {
 
             display: grid;
@@ -1460,7 +1595,7 @@
 
 <section class="section"
          id="collections">
-
+<div class="collections-flag-bg" aria-hidden="true"></div>
     <h2 class="section-title">
 
         Featured Collections
